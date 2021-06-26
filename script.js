@@ -35,4 +35,13 @@ function displayBooks(){
 
 displayBooks();
 
-const addBookButton = document.querySelector(`addBook`);
+let formDisplayCheck = false;
+
+const addBookButton = document.querySelector(`#addBook`);
+const bookForm = document.getElementById(`addForm`);
+addBookButton.addEventListener('click', handleFormDisplay);
+
+function handleFormDisplay(){
+    formDisplayCheck = !formDisplayCheck;
+    bookForm.style.display = formDisplayCheck ? `flex` : `none`;
+}
