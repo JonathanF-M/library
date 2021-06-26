@@ -5,3 +5,7 @@
 .bookCard{
     border: 2px solid purple;
 }
+
+#addForm{
+    border: 2px solid green;;
+}

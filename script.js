@@ -34,3 +34,5 @@ function displayBooks(){
 }
 
 displayBooks();
+
+const addBookButton = document.querySelector(`addBook`);
