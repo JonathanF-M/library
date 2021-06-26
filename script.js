@@ -11,37 +11,55 @@ function Book(title, author, pages, read) {
 
 function addBookToLibrary(book) {
     myLibrary.push(book);
+    displayBook();
 }
 
 const theHobbit = new Book("The Hobbit", "JRR Tolkien", 249, 0);
 addBookToLibrary(theHobbit);
 
-for(let i = 0; i <= 6; i++){
+/*for(let i = 0; i <= 6; i++){
     const book = new Book(`Book${i}`, `Author${i}`, 420, 69)
     addBookToLibrary(book);
-}
+}*/
 
 container = document.querySelector("#container");
 
-function displayBooks(){
-    for(let i=0; i < myLibrary.length; i++){
-        bookCard = document.createElement("div");
-        bookCard.setAttribute('class', 'bookCard');
-        bookCard.setAttribute('data-index', `${i}`)
-        bookCard.textContent = myLibrary[i].info();
-        container.appendChild(bookCard);
-    }
+function displayBook(){
+    bookCard = document.createElement("div");
+    bookCard.setAttribute('class', 'bookCard');
+    bookCard.setAttribute('data-index', `${myLibrary.length - 1}`)
+    bookCard.textContent = myLibrary[myLibrary.length - 1].info();
+    container.appendChild(bookCard);
 }
 
-displayBooks();
+//displayBooks();
 
 let formDisplayCheck = false;
 
-const addBookButton = document.querySelector(`#addBook`);
+const toggleFormButton = document.querySelector(`#toggleForm`);
 const bookForm = document.getElementById(`addForm`);
-addBookButton.addEventListener('click', handleFormDisplay);
+toggleFormButton.addEventListener('click', toggleFormDisplay);
 
-function handleFormDisplay(){
+function toggleFormDisplay(event){
+    event.preventDefault();
+    bookForm.reset();
     formDisplayCheck = !formDisplayCheck;
     bookForm.style.display = formDisplayCheck ? `flex` : `none`;
+}
+
+cancelButton = document.getElementById(`cancel`);
+cancelButton.addEventListener('click', toggleFormDisplay);
+
+const addButton = document.querySelector('#add');
+addButton.addEventListener('click', checkInput);
+
+function checkInput(event) {
+    event.preventDefault();
+    let book = new Book(document.getElementById(`Title`).value,
+                        document.getElementById(`Author`).value,
+                        document.getElementById(`PageCount`).value,
+                        document.getElementById(`PagesRead`).value);
+    addBookToLibrary(book);
+    toggleFormDisplay(event);
+
 }
