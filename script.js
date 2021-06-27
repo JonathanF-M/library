@@ -7,8 +7,8 @@ function Book(title, author, pages, read, completed) {
     this.read = read;
     this.completed = completed;
     this.info = function() {
-        return `${this.title} by ${this.author}, ${this.pages} pages, ${ this.completed ? "" : "not"} completed.` };
-}
+        return `${this.title} by ${this.author}, ${this.pages} pages.`;
+}}
 
 function addBookToLibrary(book) {
     myLibrary.push(book);
@@ -18,10 +18,10 @@ function addBookToLibrary(book) {
 const theHobbit = new Book("The Hobbit", "JRR Tolkien", 249, 0);
 addBookToLibrary(theHobbit);
 
-/*for(let i = 0; i <= 6; i++){
+for(let i = 0; i <= 6; i++){
     const book = new Book(`Book${i}`, `Author${i}`, 420, 69)
     addBookToLibrary(book);
-}*/
+}
 
 container = document.querySelector("#container");
 
@@ -30,10 +30,17 @@ function displayBook(){
     bookCard.setAttribute('class', 'bookCard');
     bookCard.setAttribute('data-index', `${myLibrary.length - 1}`)
     bookCard.textContent = myLibrary[myLibrary.length - 1].info();
+    
     deleteButton = document.createElement(`button`);
     deleteButton.textContent = `Delete`;
     bookCard.appendChild(deleteButton);
     deleteButton.addEventListener(`click`, handleDelete);
+
+    completedButton = document.createElement(`button`);
+    completedButton.textContent = `Completed`;
+    bookCard.appendChild(completedButton);
+    completedButton.addEventListener(`click`, handleCompleted);
+
     container.appendChild(bookCard);
 }
 
@@ -96,4 +103,12 @@ function handleDelete(event){
     parentIndex = parentBookCard.dataset.index;
     myLibrary.splice(parentIndex, 1);
     container.removeChild(parentBookCard);
+}
+
+function handleCompleted(event){
+    let parentBookCard = event.target.parentElement;
+    parentIndex = parentBookCard.dataset.index;
+    myLibrary[parentIndex].completed = true;
+    myLibrary[parentIndex].read = myLibrary[parentIndex].pages;
+    parentBookCard.removeChild(parentBookCard.lastChild);
 }
