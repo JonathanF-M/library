@@ -13,4 +13,5 @@
 #addForm{
     border: 2px solid green;
     display: none;
+    flex-direction: column;
 }

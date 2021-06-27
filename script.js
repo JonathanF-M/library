@@ -1,12 +1,13 @@
 let myLibrary = [];
 
-function Book(title, author, pages, read) {
+function Book(title, author, pages, read, completed) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
+    this.completed = completed;
     this.info = function() {
-        return `${this.title} by ${this.author}, ${this.pages} pages, ${ !this.read ? "not" : ""} read yet.` };
+        return `${this.title} by ${this.author}, ${this.pages} pages, ${ this.completed ? "" : "not"} completed.` };
 }
 
 function addBookToLibrary(book) {
@@ -54,12 +55,34 @@ const addButton = document.querySelector('#add');
 addButton.addEventListener('click', checkInput);
 
 function checkInput(event) {
+    let valid = true;
     event.preventDefault();
-    let book = new Book(document.getElementById(`Title`).value,
-                        document.getElementById(`Author`).value,
-                        document.getElementById(`PageCount`).value,
-                        document.getElementById(`PagesRead`).value);
-    addBookToLibrary(book);
-    toggleFormDisplay(event);
 
+    let inputTitle = document.getElementById(`Title`).value,
+        inputAuthor = document.getElementById(`Author`).value,
+        inputPageCount = document.getElementById(`PageCount`).value,
+        inputPagesRead = document.getElementById(`PagesRead`).value;
+
+    if(inputTitle === ""){
+        console.log('no title');
+        valid = false;
+    }
+    if(inputAuthor === ""){
+        console.log('no author');
+        valid = false;
+    }
+    if(inputPageCount === "" || isNaN(Number(inputPageCount))){
+        console.log('bad count');
+        valid = false;
+    }
+    if(inputPagesRead === "" || isNaN(Number(inputPagesRead)) || inputPagesRead > inputPageCount ){
+        console.log('bad read');
+        valid = false;
+    }
+
+    if(valid === true){
+        let book = new Book(inputTitle, inputAuthor, inputPageCount, inputPagesRead, inputPageCount === inputPagesRead);
+        addBookToLibrary(book);
+        toggleFormDisplay(event);
+    }
 }

@@ -3,20 +3,26 @@
     <body>
         <button id="toggleForm">Add Book</button>
         <form id="addForm">
-            <label for="Title">Title:</label>
-            <input id="Title" name="Title" type="text" placeholder="Lord of the Rings">
-            
-            <label for="Author">Author:</label>
-            <input id="Author" name="Author" type="text" placeholder="JRR Tolkien">
-            
-            <label for="PageCount">Total Pages:</label>
-            <input id="PageCount" name="PageCount" type="number" placeholder="420">
-            
-            <label for="PagesRead">Pages Read:</label>
-            <input id="PagesRead" name="PagesRead" type="number" placeholder="420">
-            
-            <button type="submit" id="add">Add</button>
-            <button id="cancel">Cancel</button>
+            <div class="formBox">
+                <label for="Title">Title:</label>
+                <input id="Title" name="Title" type="text" placeholder="Lord of the Rings">
+            </div>
+            <div class="formBox">
+                <label for="Author">Author:</label>
+                <input id="Author" name="Author" type="text" placeholder="JRR Tolkien">
+            </div>
+            <div class="formBox">
+                <label for="PageCount">Total Pages:</label>
+                <input id="PageCount" name="PageCount" type="number" placeholder="420">
+            </div>
+            <div class="formBox">
+                <label for="PagesRead">Pages Read:</label>
+                <input id="PagesRead" name="PagesRead" type="number" placeholder="420">
+            </div>
+            <div class="formBox">
+                <button type="submit" id="add">Add</button>
+                <button id="cancel">Cancel</button>
+            </div>
         </form>
         <div id="container">
         </div>
