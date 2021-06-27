@@ -30,6 +30,10 @@ function displayBook(){
     bookCard.setAttribute('class', 'bookCard');
     bookCard.setAttribute('data-index', `${myLibrary.length - 1}`)
     bookCard.textContent = myLibrary[myLibrary.length - 1].info();
+    deleteButton = document.createElement(`button`);
+    deleteButton.textContent = `Delete`;
+    bookCard.appendChild(deleteButton);
+    deleteButton.addEventListener(`click`, handleDelete);
     container.appendChild(bookCard);
 }
 
@@ -85,4 +89,11 @@ function checkInput(event) {
         addBookToLibrary(book);
         toggleFormDisplay(event);
     }
+}
+
+function handleDelete(event){
+    let parentBookCard = event.target.parentElement;
+    parentIndex = parentBookCard.dataset.index;
+    myLibrary.splice(parentIndex, 1);
+    container.removeChild(parentBookCard);
 }
