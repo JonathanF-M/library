@@ -137,10 +137,15 @@ function handleDelete(event){
     parentIndex = parentBookCard.dataset.index;
     myLibrary.splice(parentIndex, 1);
     container.removeChild(parentBookCard);
+    bookList = document.querySelectorAll(`.bookCard`);
+    for(let i = 0; i < bookList.length; i++){
+        bookList[i].dataset.index = i;
+    }
+    console.log(bookList);
 }
 
 function handleCompleted(event){
-    event.preventDefault;
+    //event.preventDefault;
     let parentInfoCard = event.target.parentElement;
     let parentBookCard = parentInfoCard.parentElement;
     parentIndex = parentBookCard.dataset.index;
