@@ -4,14 +4,29 @@
 
 #container{
     border: 1px solid red;
+    display: flex;
 }
 
 .bookCard{
     border: 2px solid purple;
+    display: flex;
+    flex-direction: column;
 }
 
 #addForm{
     border: 2px solid green;
     display: none;
     flex-direction: column;
+}
+
+.cover{
+    border:2px solid salmon;
+}
+
+.authorCard{
+    border: 3px solid yellow;
+}
+
+.titleCard{
+    border: 3px solid orange;
 }

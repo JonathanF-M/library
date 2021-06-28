@@ -29,17 +29,51 @@ function displayBook(){
     bookCard = document.createElement("div");
     bookCard.setAttribute('class', 'bookCard');
     bookCard.setAttribute('data-index', `${myLibrary.length - 1}`)
-    bookCard.textContent = myLibrary[myLibrary.length - 1].info();
-    
+
     deleteButton = document.createElement(`button`);
-    deleteButton.textContent = `Delete`;
+    deleteButton.textContent = `x`;
     bookCard.appendChild(deleteButton);
     deleteButton.addEventListener(`click`, handleDelete);
 
-    completedButton = document.createElement(`button`);
-    completedButton.textContent = `Completed`;
-    bookCard.appendChild(completedButton);
-    completedButton.addEventListener(`click`, handleCompleted);
+    cover = document.createElement(`div`);
+    cover.setAttribute(`class`, `cover`);
+
+    titleDiv = document.createElement(`div`);
+    titleDiv.setAttribute(`class`, `titleCard`);
+    titleDiv.textContent = myLibrary[myLibrary.length - 1].title;
+    cover.appendChild(titleDiv);
+
+    authorDiv = document.createElement(`div`);
+    authorDiv.setAttribute(`class`, `authorCard`)
+    authorDiv.textContent = myLibrary[myLibrary.length -1].author;
+    cover.appendChild(authorDiv);
+
+    //cover.textContent = myLibrary[myLibrary.length - 1].info();
+    bookCard.appendChild(cover);
+
+    infoCard = document.createElement(`div`);
+    infoCard.setAttribute(`class`, `infoCard`);
+
+    readDiv = document.createElement(`div`);
+    readDiv.setAttribute(`class`, `readDiv`);
+    readDiv.textContent = `Pages Read: ${myLibrary[myLibrary.length -1].read}`
+    infoCard.appendChild(readDiv);
+
+    totalDiv = document.createElement(`div`);
+    totalDiv.setAttribute(`class`, `totalDiv`);
+    totalDiv.textContent = `Total Pages: ${myLibrary[myLibrary.length -1].pages}`
+    infoCard.appendChild(totalDiv);
+
+    completedLabel = document.createElement(`label`);
+    completedLabel.textContent = `Completed:`;
+    infoCard.appendChild(completedLabel);
+
+    completedBox = document.createElement(`input`);
+    completedBox.setAttribute(`type`, `checkbox`);
+    infoCard.appendChild(completedBox);
+    completedBox.addEventListener(`click`, handleCompleted);
+
+    bookCard.appendChild(infoCard);
 
     container.appendChild(bookCard);
 }
@@ -86,7 +120,7 @@ function checkInput(event) {
         console.log('bad count');
         valid = false;
     }
-    if(inputPagesRead === "" || isNaN(Number(inputPagesRead)) || inputPagesRead > inputPageCount ){
+    if(inputPagesRead === "" || isNaN(Number(inputPagesRead)) || Number(inputPagesRead) > Number(inputPageCount) ){
         console.log('bad read');
         valid = false;
     }
@@ -106,9 +140,11 @@ function handleDelete(event){
 }
 
 function handleCompleted(event){
-    let parentBookCard = event.target.parentElement;
+    event.preventDefault;
+    let parentInfoCard = event.target.parentElement;
+    let parentBookCard = parentInfoCard.parentElement;
     parentIndex = parentBookCard.dataset.index;
     myLibrary[parentIndex].completed = true;
     myLibrary[parentIndex].read = myLibrary[parentIndex].pages;
-    parentBookCard.removeChild(parentBookCard.lastChild);
+    parentInfoCard.firstChild.textContent = `Pages Read: ${myLibrary[parentIndex].pages}`
 }
