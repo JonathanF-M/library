@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #container{
     border: 1px solid red;
     display: flex;
@@ -24,9 +30,16 @@
 }
 
 #addForm{
-    /*border: 2px solid green;*/
+    border: 2px solid green;
     display: none;
     flex-direction: column;
+    background-color: pink;
+    width: 30vw;
+    height: 32vw;
+    position: fixed;
+    top: 10%;
+    z-index: 3;
+    align-items: center;
 }
 
 .cover{
@@ -74,4 +87,51 @@
     align-self: flex-end;
     margin: 3px;
     padding: auto;
+}
+
+#toggleForm{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.formBox{
+    border: 2px red solid;
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    font-size: 1.5vw;
+    margin: auto;
+}
+
+.formBox input{
+    height: 3vw;
+    font-size: 1.5vw;  
+}
+
+.buttonBox{
+    border: 2px blue solid;
+    display: flex;
+    justify-content: space-between;
+    align-self: stretch;
+}
+
+#titleBox{
+    border: cadetblue 2px solid;
+    text-align: center;
+    align-self: stretch;
+    height: 15%;
+}
+
+#blocker{
+    background-color: black;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0%;
+    left: 0;
+    z-index: 1;
+    opacity: 50%;
+    display: none;
 }

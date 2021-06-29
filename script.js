@@ -86,12 +86,15 @@ let formDisplayCheck = false;
 const toggleFormButton = document.querySelector(`#toggleForm`);
 const bookForm = document.getElementById(`addForm`);
 toggleFormButton.addEventListener('click', toggleFormDisplay);
+const blocker = document.querySelector(`#blocker`);
+blocker.addEventListener(`click`, toggleFormDisplay);
 
 function toggleFormDisplay(event){
     event.preventDefault();
     bookForm.reset();
     formDisplayCheck = !formDisplayCheck;
     bookForm.style.display = formDisplayCheck ? `flex` : `none`;
+    blocker.style.display = formDisplayCheck ? `flex` : `none`;
 }
 
 cancelButton = document.getElementById(`cancel`);

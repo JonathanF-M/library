@@ -3,6 +3,9 @@
     <body>
         <button id="toggleForm">Add Book</button>
         <form id="addForm">
+            <div id="titleBox">
+                <h3>Add Book</h3>
+            </div>
             <div class="formBox">
                 <label for="Title">Title:</label>
                 <input id="Title" name="Title" type="text" placeholder="Lord of the Rings">
@@ -19,11 +22,12 @@
                 <label for="PagesRead">Pages Read:</label>
                 <input id="PagesRead" name="PagesRead" type="number" placeholder="420">
             </div>
-            <div class="formBox">
+            <div class="buttonBox">
                 <button type="submit" id="add">Add</button>
                 <button id="cancel">Cancel</button>
             </div>
         </form>
+        <div id="blocker"></div>
         <div id="container">
         </div>
     </body>
