@@ -31,6 +31,7 @@ function displayBook(){
     bookCard.setAttribute('data-index', `${myLibrary.length - 1}`)
 
     deleteButton = document.createElement(`button`);
+    deleteButton.setAttribute(`class`, `delete`);
     deleteButton.textContent = `x`;
     bookCard.appendChild(deleteButton);
     deleteButton.addEventListener(`click`, handleDelete);
@@ -153,3 +154,6 @@ function handleCompleted(event){
     myLibrary[parentIndex].read = myLibrary[parentIndex].pages;
     parentInfoCard.firstChild.textContent = `Pages Read: ${myLibrary[parentIndex].pages}`
 }
+
+const testBook = new Book("A very long book name that just goes on and on for the purpose of knowing how it will fit", "A man with an equally very long name", 500, 400);
+addBookToLibrary(testBook);

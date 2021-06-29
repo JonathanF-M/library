@@ -1,18 +1,26 @@
 *{
     z-index: 0;
-    border: 1px solid red;
+    /*border: 1px solid red;*/
     box-sizing: border-box;
 }
 
 #container{
-    /*border: 1px solid red;*/
+    border: 1px solid red;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /*flex: 1;*/
+    align-items: center;
 }
 
 .bookCard{
-    /*border: 2px solid purple;*/
+    border: 5px solid purple;
     display: flex;
     flex-direction: column;
+    width: 25vw;
+    height: 30vw;
+    align-items: center;
+    margin: 10px;
 }
 
 #addForm{
@@ -22,13 +30,48 @@
 }
 
 .cover{
-    /*border:2px solid salmon;*/
+    border:2px solid salmon;
+    width: 80%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .authorCard{
-    /*border: 3px solid yellow;*/
+    border: 5px solid yellow;
+    text-align: center;
+    margin: auto;
+    font-size: 1.2vw;
 }
 
 .titleCard{
-    /*border: 3px solid orange;*/
+    border: 3px solid orange;
+    text-align: center;
+    margin: auto;
+    font-size: 2vw;
+}
+
+.infoCard{
+    border: 2px blue solid;
+    font-size: 1.3vw;
+    margin: auto;
+}
+
+.readDiv{
+
+}
+
+.totalDiv{
+}
+
+.bookCard button{
+    justify-self: flex-end;
+}
+
+.delete{
+    align-self: flex-end;
+    margin: 3px;
+    padding: auto;
 }
