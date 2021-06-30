@@ -8,10 +8,10 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #685369;
 }
 
 #container{
-    border: 1px solid red;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -20,13 +20,15 @@ body{
 }
 
 .bookCard{
-    border: 5px solid purple;
     display: flex;
     flex-direction: column;
     width: 25vw;
     height: 30vw;
     align-items: center;
     margin: 10px;
+    background-color: #c6d8af;
+    border-radius: 3%;
+    box-shadow: 3px 5px 5px black;
 }
 
 #addForm{
@@ -43,33 +45,40 @@ body{
 }
 
 .cover{
-    border:2px solid salmon;
-    width: 80%;
-    height: 70%;
+    width: 18vw;
+    height: 20vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: white;
+    /*box-shadow: 5px 0px white;*/
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 .authorCard{
-    border: 5px solid yellow;
     text-align: center;
     margin: auto;
     font-size: 1.2vw;
 }
 
 .titleCard{
-    border: 3px solid orange;
     text-align: center;
     margin: auto;
     font-size: 2vw;
 }
 
 .infoCard{
-    border: 2px blue solid;
     font-size: 1.3vw;
     margin: auto;
+    text-align: center;
+    /*font-family: 'Roboto', sans-serif;*/
+    font-weight: bolder;
+    font-family: 'Josefin Sans', sans-serif;
+    justify-self: stretch;
+    background-color: #efa48b;
+    border-radius: 5px;
+    padding: 10px;
 }
 
 .readDiv{
@@ -85,8 +94,14 @@ body{
 
 .delete{
     align-self: flex-end;
-    margin: 3px;
+    margin: 2%;
     padding: auto;
+    width: 1.5vw;
+    height: 1.5w;
+    background-color: #a33b20;
+    border: 0px;
+    color: white;
+    border-radius: 3px;
 }
 
 #toggleForm{

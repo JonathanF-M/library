@@ -1,4 +1,5 @@
 let myLibrary = [];
+let myColors = [`#3e5641`, `#a24936`,`#d36135`, `#282b28`, `#5c9ead`];
 
 function Book(title, author, pages, read, completed) {
     this.title = title;
@@ -25,6 +26,8 @@ for(let i = 0; i <= 6; i++){
 
 container = document.querySelector("#container");
 
+//let myColors = [`#3e5641`, `#a24936`,`#d36135`, `#282b28`, `#5c9ead`];
+
 function displayBook(){
     bookCard = document.createElement("div");
     bookCard.setAttribute('class', 'bookCard');
@@ -50,6 +53,8 @@ function displayBook(){
     cover.appendChild(authorDiv);
 
     //cover.textContent = myLibrary[myLibrary.length - 1].info();
+    let randomColor = myColors[Math.floor(Math.random()*5)];
+    cover.style.backgroundColor = randomColor;
     bookCard.appendChild(cover);
 
     infoCard = document.createElement(`div`);
@@ -94,7 +99,7 @@ function toggleFormDisplay(event){
     bookForm.reset();
     formDisplayCheck = !formDisplayCheck;
     bookForm.style.display = formDisplayCheck ? `flex` : `none`;
-    blocker.style.display = formDisplayCheck ? `flex` : `none`;
+    blocker.style.display = formDisplayCheck ? `block` : `none`;
 }
 
 cancelButton = document.getElementById(`cancel`);
