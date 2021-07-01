@@ -2,6 +2,7 @@
     z-index: 0;
     /*border: 1px solid red;*/
     box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 body{
@@ -22,8 +23,8 @@ body{
 .bookCard{
     display: flex;
     flex-direction: column;
-    width: 25vw;
-    height: 30vw;
+    width: 300px;
+    height: 400px;
     align-items: center;
     margin: 10px;
     background-color: #c6d8af;
@@ -32,12 +33,11 @@ body{
 }
 
 #addForm{
-    border: 2px solid green;
     display: none;
     flex-direction: column;
-    background-color: pink;
-    width: 30vw;
-    height: 32vw;
+    background-color: #685369;
+    width: 400px;
+    height: 450px;
     position: fixed;
     top: 10%;
     z-index: 3;
@@ -45,8 +45,8 @@ body{
 }
 
 .cover{
-    width: 18vw;
-    height: 20vw;
+    width: 200px;
+    height: 250px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -59,17 +59,17 @@ body{
 .authorCard{
     text-align: center;
     margin: auto;
-    font-size: 1.2vw;
+    font-size: 15px;
 }
 
 .titleCard{
     text-align: center;
     margin: auto;
-    font-size: 2vw;
+    font-size: 30px;
 }
 
 .infoCard{
-    font-size: 1.3vw;
+    font-size: 16px;
     margin: auto;
     text-align: center;
     /*font-family: 'Roboto', sans-serif;*/
@@ -81,13 +81,6 @@ body{
     padding: 10px;
 }
 
-.readDiv{
-
-}
-
-.totalDiv{
-}
-
 .bookCard button{
     justify-self: flex-end;
 }
@@ -95,48 +88,71 @@ body{
 .delete{
     align-self: flex-end;
     margin: 2%;
-    padding: auto;
-    width: 1.5vw;
-    height: 1.5w;
+    width: 20px;
+    height: 20px;
     background-color: #a33b20;
     border: 0px;
     color: white;
     border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
 #toggleForm{
     position: fixed;
-    bottom: 0;
-    right: 0;
+    bottom: 1%;
+    right: 1%;
     z-index: 1;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #568ea3;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 2px solid white;
 }
 
 .formBox{
-    border: 2px red solid;
     display: flex;
     flex-direction: column;
-    width: 85%;
-    font-size: 1.5vw;
-    margin: auto;
+    width: 90%;
+    margin: 15px;
+    color: white;
+    font-weight: bolder;
+    font-size: 20px;
 }
 
 .formBox input{
-    height: 3vw;
-    font-size: 1.5vw;  
+    font-size: 20px;
 }
 
 .buttonBox{
-    border: 2px blue solid;
     display: flex;
     justify-content: space-between;
     align-self: stretch;
 }
 
+.buttonBox button{
+    padding: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #568ea3;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 2px solid white;
+    margin: 5px;
+}
+
 #titleBox{
-    border: cadetblue 2px solid;
+    background-color: #c6d8af;
     text-align: center;
     align-self: stretch;
     height: 15%;
+    font-size: 25px;
+    font-weight: bolder;
 }
 
 #blocker{
@@ -150,3 +166,4 @@ body{
     opacity: 50%;
     display: none;
 }
+

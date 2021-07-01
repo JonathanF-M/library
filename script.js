@@ -19,10 +19,10 @@ function addBookToLibrary(book) {
 const theHobbit = new Book("The Hobbit", "JRR Tolkien", 249, 0);
 addBookToLibrary(theHobbit);
 
-for(let i = 0; i <= 6; i++){
+/*for(let i = 0; i <= 6; i++){
     const book = new Book(`Book${i}`, `Author${i}`, 420, 69)
     addBookToLibrary(book);
-}
+}*/
 
 container = document.querySelector("#container");
 
@@ -163,5 +163,10 @@ function handleCompleted(event){
     parentInfoCard.firstChild.textContent = `Pages Read: ${myLibrary[parentIndex].pages}`
 }
 
-const testBook = new Book("A very long book name that just goes on and on for the purpose of knowing how it will fit", "A man with an equally very long name", 500, 400);
-addBookToLibrary(testBook);
+//const theHobbit = new Book("The Hobbit", "JRR Tolkien", 249, 0);
+//addBookToLibrary(theHobbit);
+
+const artOfWar = new Book("The Art of War", "Sun Tzu", 273, 0);
+addBookToLibrary(artOfWar);
+const iliad = new Book("The Illiad", "Homer", 596, 81);
+addBookToLibrary(iliad);
