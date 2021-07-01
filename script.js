@@ -163,9 +163,6 @@ function handleCompleted(event){
     parentInfoCard.firstChild.textContent = `Pages Read: ${myLibrary[parentIndex].pages}`
 }
 
-//const theHobbit = new Book("The Hobbit", "JRR Tolkien", 249, 0);
-//addBookToLibrary(theHobbit);
-
 const artOfWar = new Book("The Art of War", "Sun Tzu", 273, 0);
 addBookToLibrary(artOfWar);
 const iliad = new Book("The Illiad", "Homer", 596, 81);
